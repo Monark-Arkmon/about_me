@@ -18,9 +18,10 @@ body {
 }
 
 .portfolio-container {
-  scroll-behavior: smooth;
-  overflow-y: auto;
-  height: 100vh;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .background {

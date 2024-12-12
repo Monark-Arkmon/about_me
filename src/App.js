@@ -9,6 +9,7 @@ function Portfolio() {
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [isImageHovered, setIsImageHovered] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const [isPageLoaded, setIsPageLoaded] = useState(false);
   
   // Create refs for each section
   const homeRef = useRef(null);
@@ -18,6 +19,19 @@ function Portfolio() {
   const skillsRef = useRef(null);
 
   useEffect(() => {
+    // Ensure page is fully loaded before triggering animations
+    const handleLoad = () => {
+      setIsPageLoaded(true);
+    };
+
+    window.addEventListener('load', handleLoad);
+
+    // Fallback in case load event doesn't fire
+    const timer = setTimeout(() => {
+      setIsPageLoaded(true);
+    }, 1000);
+
+    // Rest of the existing useEffect logic for section observation
     const sections = [
       { id: 'home', ref: homeRef },
       { id: 'about', ref: aboutRef },
@@ -44,7 +58,11 @@ function Portfolio() {
       }
     });
 
-    return () => observer.disconnect();
+    return () => {
+      window.removeEventListener('load', handleLoad);
+      clearTimeout(timer);
+      observer.disconnect();
+    };
   }, []);
 
   const scrollToSection = (elementRef) => {
@@ -249,46 +267,64 @@ function Portfolio() {
         {renderContactDropdown()}
       </div>
 
+    <div className="portfolio-container">
+      {renderNavigation()}
+      <div className="contact">
+        {renderContactDropdown()}
+      </div>
+
       {/* Home Page */}
       <div ref={homeRef} className="landing-page">
         <div className="background"></div>
         <div className="name-description">
-        <motion.div 
+          <motion.div 
             className="profile-image-container"
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ 
-              duration: 0.8, 
-              type: "spring", 
-              stiffness: 100, 
-              damping: 10 
-            }}
             onMouseEnter={() => setIsImageHovered(true)}
             onMouseLeave={() => setIsImageHovered(false)}
           >
-            <img 
+            <motion.img 
               src={profileImage} 
               width="250" 
               height="250"
               loading="lazy"
               alt="Arkapratim Mondal" 
               className={`profile-image ${isImageHovered ? 'image-hover' : ''}`}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
             />
           </motion.div>
-          <motion.h1
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-          >
-            Arkapratim Mondal
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-          >
-            Student & Aspiring Software Engineer
-          </motion.p>
+          {isPageLoaded && (
+            <>
+              <motion.h1
+                initial={{ opacity: 0, x: -100 }}
+                animate={{ 
+                  opacity: 1, 
+                  x: 0,
+                  transition: {
+                    duration: 0.8,
+                    ease: "easeOut"
+                  }
+                }}
+              >
+                Arkapratim Mondal
+              </motion.h1>
+              <motion.p
+                initial={{ opacity: 0, x: -100 }}
+                animate={{ 
+                  opacity: 1, 
+                  x: 0,
+                  transition: {
+                    duration: 0.8,
+                    delay: 0.4,
+                    ease: "easeOut"
+                  }
+                }}
+              >
+                Student & Aspiring Software Engineer
+              </motion.p>
+            </>
+          )}
         </div>
       </div>
 
@@ -427,6 +463,7 @@ function Portfolio() {
       </motion.section>
 
     </div>
+  </div>
   );
 }
 
