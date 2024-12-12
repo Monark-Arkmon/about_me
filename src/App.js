@@ -7,6 +7,7 @@ import profileImage from './profile.jpg';
 
 function Portfolio() {
   const [isContactOpen, setIsContactOpen] = useState(false);
+  // eslint-disable-next-line no-unused-vars
   const [isImageHovered, setIsImageHovered] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [isPageLoaded, setIsPageLoaded] = useState(false);
@@ -31,7 +32,6 @@ function Portfolio() {
       setIsPageLoaded(true);
     }, 1000);
 
-    // Rest of the existing useEffect logic for section observation
     const sections = [
       { id: 'home', ref: homeRef },
       { id: 'about', ref: aboutRef },
@@ -290,14 +290,22 @@ function Portfolio() {
             onMouseEnter={() => setIsImageHovered(true)}
             onMouseLeave={() => setIsImageHovered(false)}
           >
-            <img 
-              src={profileImage} 
-              width="250" 
-              height="250"
-              loading="lazy"
-              alt="Arkapratim Mondal" 
-              className={`profile-image ${isImageHovered ? 'image-hover' : ''}`}
-            />
+            <div 
+              className="profile-image-container"
+              style={{ 
+                transition: 'transform 0.3s ease', 
+                willChange: 'transform' 
+              }}
+            >
+              <img 
+                src={profileImage} 
+                width="250" 
+                height="250"
+                loading="lazy"
+                alt="Arkapratim Mondal" 
+                className="profile-image"
+              />
+            </div>
           </motion.div>
           {isPageLoaded && (
             <>
