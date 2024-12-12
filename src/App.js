@@ -277,21 +277,26 @@ function Portfolio() {
       <div ref={homeRef} className="landing-page">
         <div className="background"></div>
         <div className="name-description">
-          <motion.div 
+        <motion.div 
             className="profile-image-container"
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ 
+              duration: 0.8, 
+              type: "spring", 
+              stiffness: 100, 
+              damping: 10 
+            }}
             onMouseEnter={() => setIsImageHovered(true)}
             onMouseLeave={() => setIsImageHovered(false)}
           >
-            <motion.img 
+            <img 
               src={profileImage} 
               width="250" 
               height="250"
               loading="lazy"
               alt="Arkapratim Mondal" 
               className={`profile-image ${isImageHovered ? 'image-hover' : ''}`}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
             />
           </motion.div>
           {isPageLoaded && (
