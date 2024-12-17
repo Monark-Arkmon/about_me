@@ -125,6 +125,13 @@ function Portfolio() {
       image: project1Image,
       description: 'This is a description of Project 2.',
       githubLink: 'https://github.com/yourusername/project2'
+    },
+    {
+      id: 9,
+      name: 'Project 3',
+      image: project1Image,
+      description: 'This is a description of Project 3.',
+      githubLink: 'https://github.com/yourusername/project3'
     }
   ];
 
@@ -385,7 +392,7 @@ function Portfolio() {
       {/* Projects Section */}
       <motion.section 
         ref={projectsRef}
-        className="projects-section"
+        className="section projects-section"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
