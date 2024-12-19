@@ -18,17 +18,7 @@ function Portfolio() {
   const skillsRef = useRef(null);
 
   useEffect(() => {
-    // Ensure page is fully loaded before triggering animations
-    const handleLoad = () => {
-      setIsPageLoaded(true);
-    };
-
-    window.addEventListener('load', handleLoad);
-
-    // Fallback in case load event doesn't fire
-    const timer = setTimeout(() => {
-      setIsPageLoaded(true);
-    }, 1000);
+    setIsPageLoaded(true);
 
     const sections = [
       { id: 'home', ref: homeRef },
@@ -38,30 +28,47 @@ function Portfolio() {
       { id: 'skills', ref: skillsRef },
     ];
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    sections.forEach(({ id, ref }) => {
-      if (ref.current) {
-        ref.current.id = id;
-        observer.observe(ref.current);
+    // Function to calculate which section is most visible
+    const calculateVisibleSection = () => {
+      const scrollPosition = window.scrollY + window.innerHeight / 3;
+      
+      // Special handling for home and about sections due to overlap
+      if (scrollPosition < window.innerHeight * 0.8) {
+        return 'home';
       }
-    });
+      
+      // For other sections, find the one most visible
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i];
+        if (section.ref.current) {
+          const element = section.ref.current;
+          const rect = element.getBoundingClientRect();
+          const sectionTop = rect.top + window.scrollY;
+          
+          if (scrollPosition >= sectionTop) {
+            return section.id;
+          }
+        }
+      }
+      
+      return 'home'; // Default to home if no section is found
+    };
+
+    // Add scroll event listener
+    const handleScroll = () => {
+      const newActiveSection = calculateVisibleSection();
+      if (newActiveSection !== activeSection) {
+        setActiveSection(newActiveSection);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check
 
     return () => {
-      window.removeEventListener('load', handleLoad);
-      clearTimeout(timer);
-      observer.disconnect();
+      window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [activeSection]);
 
   const createStarfield = () => {
     const starsContainer = document.createElement('div');
