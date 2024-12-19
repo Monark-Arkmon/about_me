@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/about_me/static/css/main.22d05273.css",
+    "main.css": "/about_me/static/css/main.cf7f1c2e.css",
     "main.js": "/about_me/static/js/main.bbd0c552.js",
     "static/js/488.c5c89586.chunk.js": "/about_me/static/js/488.c5c89586.chunk.js",
     "static/media/CV_Arkapratim_Mondal.pdf": "/about_me/static/media/CV_Arkapratim_Mondal.6eac0403c52fe1062636.pdf",
@@ -8,12 +8,12 @@
     "static/media/header-img.svg": "/about_me/static/media/header-img.84bf93eb20488a753440bf83d27db7bb.svg",
     "static/media/project.jpg": "/about_me/static/media/project.42a1ad28b19ee25295b6.jpg",
     "index.html": "/about_me/index.html",
-    "main.22d05273.css.map": "/about_me/static/css/main.22d05273.css.map",
+    "main.cf7f1c2e.css.map": "/about_me/static/css/main.cf7f1c2e.css.map",
     "main.bbd0c552.js.map": "/about_me/static/js/main.bbd0c552.js.map",
     "488.c5c89586.chunk.js.map": "/about_me/static/js/488.c5c89586.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.22d05273.css",
+    "static/css/main.cf7f1c2e.css",
     "static/js/main.bbd0c552.js"
   ]
 }
