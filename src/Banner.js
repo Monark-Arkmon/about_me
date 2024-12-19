@@ -8,19 +8,19 @@ export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [text, setText] = useState('');
-  const [delta, setDelta] = useState(300 - Math.random() * 100);
+  const [delta, setDelta] = useState(150);
   // eslint-disable-next-line no-unused-vars
   const [index, setIndex] = useState(1);
-  const toRotate = [ "Web Developer", "Database Manager", "Full Stack Developer" ];
-  const period = 1800;
+  const toRotate = ["Web Developer", "Back-End Developer",  "Software Engineer"];
+  const period = 1300;
 
   useEffect(() => {
     let ticker = setInterval(() => {
       tick();
     }, delta);
-
+    
     return () => { clearInterval(ticker) };
-  }, [text])
+  }, [text, delta]);
 
   const tick = () => {
     let i = loopNum % toRotate.length;
@@ -31,6 +31,8 @@ export const Banner = () => {
 
     if (isDeleting) {
       setDelta(prevDelta => prevDelta / 2);
+    } else {
+      setDelta(150);
     }
 
     if (!isDeleting && updatedText === fullText) {
@@ -41,7 +43,7 @@ export const Banner = () => {
       setIsDeleting(false);
       setLoopNum(loopNum + 1);
       setIndex(1);
-      setDelta(500);
+      setDelta(500); 
     } else {
       setIndex(prevIndex => prevIndex + 1);
     }
@@ -55,7 +57,7 @@ export const Banner = () => {
             <TrackVisibility>
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                <h1>{`Hi! I'm Arkapratim Mondal,`} <span className="wrap">{text}</span></h1>
+                <h1>{`Hi! I'm Arkapratim Mondal,`} <span className="txt-rotate" data-period="1000" data-rotate='[ "Web Developer", "Back-End Developer",  "Software Engineer" ]'><span className="wrap">{text}</span></span></h1>
                   <p>Welcome to my portfolio! As a student and aspiring developer, I’m passionate about learning new technologies and solving real-world problems. I enjoy exploring various aspects of software development, constantly challenging myself to grow and build innovative solutions along the way.</p>
               </div>}
             </TrackVisibility>

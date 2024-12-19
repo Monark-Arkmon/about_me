@@ -59,7 +59,6 @@ body {
   display: flex;
   align-items: center;
 }
-
 .banner h1 {
   font-size: 4rem;
   font-weight: 700;
@@ -132,13 +131,13 @@ body {
 }
 
 .txt-rotate > .wrap {
-  border-right: 0.08em solid #878585;
+  border-right: 0.08em solid #fff;
   animation: blink-caret 0.75s step-end infinite;
 }
 
 @keyframes blink-caret {
   from, to { border-color: transparent; }
-  50% { border-color: #878585; }
+  50% { border-color: #504f4f; }
 }
 
 

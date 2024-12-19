@@ -10,7 +10,6 @@ function Portfolio() {
   const [activeSection, setActiveSection] = useState('home');
   const [isPageLoaded, setIsPageLoaded] = useState(false);
   
-  // Create refs for each section
   const homeRef = useRef(null);
   const aboutRef = useRef(null);
   const ExperienceRef = useRef(null);
@@ -28,16 +27,13 @@ function Portfolio() {
       { id: 'skills', ref: skillsRef },
     ];
 
-    // Function to calculate which section is most visible
     const calculateVisibleSection = () => {
       const scrollPosition = window.scrollY + window.innerHeight / 3;
       
-      // Special handling for home and about sections due to overlap
       if (scrollPosition < window.innerHeight * 0.8) {
         return 'home';
       }
       
-      // For other sections, find the one most visible
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = sections[i];
         if (section.ref.current) {
@@ -51,10 +47,9 @@ function Portfolio() {
         }
       }
       
-      return 'home'; // Default to home if no section is found
+      return 'home';
     };
 
-    // Add scroll event listener
     const handleScroll = () => {
       const newActiveSection = calculateVisibleSection();
       if (newActiveSection !== activeSection) {
@@ -78,17 +73,14 @@ function Portfolio() {
     for (let i = 0; i < 200; i++) {
       const star = document.createElement('div');
       star.className = 'star';
-      
-      // Random size between 1-3px
+
       const size = Math.random() * 2 + 1;
       star.style.width = `${size}px`;
       star.style.height = `${size}px`;
-      
-      // Random position
+
       star.style.left = `${Math.random() * 100}%`;
       star.style.top = `${Math.random() * 100}%`;
-      
-      // Random twinkle duration
+
       star.style.setProperty('--duration', `${Math.random() * 3 + 2}s`);
       
       starsContainer.appendChild(star);
@@ -99,7 +91,6 @@ function Portfolio() {
       const shootingStar = document.createElement('div');
       shootingStar.className = 'shooting-star';
       
-      // Random position and delay
       shootingStar.style.left = `${Math.random() * 100}%`;
       shootingStar.style.top = `${Math.random() * 50}%`;
       shootingStar.style.animationDelay = `${Math.random() * 5}s`;
@@ -115,7 +106,6 @@ function Portfolio() {
     document.body.appendChild(starsContainer);
   };
   
-  // Call when component mounts
   useEffect(() => {
     createStarfield();
   }, []);
