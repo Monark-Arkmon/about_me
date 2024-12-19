@@ -3,12 +3,10 @@ import { motion } from 'framer-motion';
 import './App.css';
 import project1Image from './project.jpg';
 import CV from './CV_Arkapratim_Mondal.pdf';
-import profileImage from './profile.jpg';
+import { Banner } from './Banner';
 
 function Portfolio() {
   const [isContactOpen, setIsContactOpen] = useState(false);
-  // eslint-disable-next-line no-unused-vars
-  const [isImageHovered, setIsImageHovered] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [isPageLoaded, setIsPageLoaded] = useState(false);
   
@@ -63,6 +61,56 @@ function Portfolio() {
       clearTimeout(timer);
       observer.disconnect();
     };
+  }, []);
+
+  const createStarfield = () => {
+    const starsContainer = document.createElement('div');
+    starsContainer.className = 'stars';
+    
+    // Create regular stars
+    for (let i = 0; i < 200; i++) {
+      const star = document.createElement('div');
+      star.className = 'star';
+      
+      // Random size between 1-3px
+      const size = Math.random() * 2 + 1;
+      star.style.width = `${size}px`;
+      star.style.height = `${size}px`;
+      
+      // Random position
+      star.style.left = `${Math.random() * 100}%`;
+      star.style.top = `${Math.random() * 100}%`;
+      
+      // Random twinkle duration
+      star.style.setProperty('--duration', `${Math.random() * 3 + 2}s`);
+      
+      starsContainer.appendChild(star);
+    }
+    
+    // Create shooting stars
+    for (let i = 0; i < 3; i++) {
+      const shootingStar = document.createElement('div');
+      shootingStar.className = 'shooting-star';
+      
+      // Random position and delay
+      shootingStar.style.left = `${Math.random() * 100}%`;
+      shootingStar.style.top = `${Math.random() * 50}%`;
+      shootingStar.style.animationDelay = `${Math.random() * 5}s`;
+      
+      starsContainer.appendChild(shootingStar);
+    }
+    
+    // Add aurora effect
+    const aurora = document.createElement('div');
+    aurora.className = 'aurora';
+    starsContainer.appendChild(aurora);
+    
+    document.body.appendChild(starsContainer);
+  };
+  
+  // Call when component mounts
+  useEffect(() => {
+    createStarfield();
   }, []);
 
   const scrollToSection = (elementRef) => {
@@ -260,94 +308,38 @@ function Portfolio() {
         {renderContactDropdown()}
       </div>
 
-    <div className="portfolio-container">
-      {renderNavigation()}
-      <div className="contact">
-        {renderContactDropdown()}
-      </div>
-
       {/* Home Page */}
       <div ref={homeRef} className="landing-page">
         <div className="background"></div>
         <div className="name-description">
-        <motion.div 
-            className="profile-image-container"
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ 
-              duration: 0.8, 
-              type: "spring", 
-              stiffness: 100, 
-              damping: 10 
-            }}
-            onMouseEnter={() => setIsImageHovered(true)}
-            onMouseLeave={() => setIsImageHovered(false)}
-          >
-            <div 
-              className="profile-image-container"
-              style={{ 
-                transition: 'transform 0.3s ease', 
-                willChange: 'transform' 
-              }}
-            >
-              <img 
-                src={profileImage} 
-                width="250" 
-                height="250"
-                loading="lazy"
-                alt="Arkapratim Mondal" 
-                className="profile-image"
-              />
-            </div>
-          </motion.div>
+        < Banner />
           {isPageLoaded && (
             <>
-              <motion.h1
-                initial={{ opacity: 0, x: -100 }}
-                animate={{ 
-                  opacity: 1, 
-                  x: 0,
-                  transition: {
-                    duration: 0.8,
-                    ease: "easeOut"
-                  }
-                }}
-              >
-                Arkapratim Mondal
-              </motion.h1>
-              <motion.p
-                initial={{ opacity: 0, x: -100 }}
-                animate={{ 
-                  opacity: 1, 
-                  x: 0,
-                  transition: {
-                    duration: 0.8,
-                    delay: 0.4,
-                    ease: "easeOut"
-                  }
-                }}
-              >
-                Student & Aspiring Software Engineer
-              </motion.p>
             </>
           )}
         </div>
       </div>
 
-      {/* Experience Section */}
+      {/* About Section */}
       <section 
         ref={aboutRef}
-        className="section about-section"
+        className="about-section"
       >
-        <h2>About Me</h2>
-        <p>Hello! I am Arkapratim Mondal, a passionate and curious first-year Computer Science student at the University of Manchester. I have a keen interest in technology, problem-solving, and building things from scratch. During my high school years, I became fascinated with coding by experimenting with automation scripts for games, and this led me to pursue a career in software development.</p>
-
-  <p>Currently, I am focused on exploring the vast field of computer science, diving into web development, and learning new technologies like React.js. I am always excited to work on projects that challenge my abilities, such as building interactive websites and developing algorithms. When I am not coding, you can find me playing games, exploring new tech trends, or contributing to tech communities.</p>
-
-  <p>I believe in creating solutions that not only solve problems but also make an impact. Whether it’s through my work on university projects or in my personal time, I strive to build technologies that make life easier and more enjoyable for everyone.</p>
-
-  <p>Feel free to browse through my portfolio to learn more about my projects and experiences!</p>
-      </section>
+        <h2>
+          About Me
+        </h2>
+        <p>
+        Hello! I am Arkapratim Mondal, a first-year Computer Science student at the University of Manchester, driven by a passion for technology, problem-solving, and innovation. My interest in coding sparked during my high school years when I created automation scripts for games. This led me to pursue a career in software development, where I continuously challenge myself to learn and grow.
+        </p>
+        <p>
+        I have experience in web development, including building projects using modern technologies like React.js, Python, and Django. I am also passionate about UI/UX design and always strive to create user-friendly and intuitive interfaces.
+        </p>
+        <p>
+        When I’m not coding, you can find me exploring new tech trends or working on personal projects.
+        </p>
+        
+        </section>
+      
 
       {/* Experience Section */}
       <motion.section 
@@ -469,7 +461,6 @@ function Portfolio() {
       </motion.section>
 
     </div>
-  </div>
   );
 }
 

@@ -24,74 +24,226 @@ body {
   padding: 0;
 }
 
+.banner {
+  margin-top: 0;
+  background-image: 
+    linear-gradient(to bottom,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(10, 3, 39, 0.4) 50%,
+      rgba(10, 3, 39, 0.8) 75%,
+      rgba(10, 3, 39, 1) 100%),
+    linear-gradient(to top,
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(0, 0, 0, 0.4) 25%,
+      rgba(0, 0, 0, 0) 50%),
+    url('./banner-bg.png');
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 50px;
+  overflow: hidden;
+}
+
+.banner .container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.banner .aligh-items-center {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.banner h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  line-height: 1;
+  margin-bottom: 20px;
+  color: white;
+  max-width: 50%;
+}
+
+.banner p {
+  color: #B8B8B8;
+  font-size: 1.2rem;
+  letter-spacing: 0.8px;
+  line-height: 1.5em;
+  max-width: 50%;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.banner img {
+  animation: updown 3s linear infinite;
+  max-width: 200%;
+  margin-left: -200px;
+}
+
+@keyframes updown {
+    0% {
+        transform: translateY(-20px);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+    100% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .banner {
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 20px;
+  }
+
+  .banner .container {
+    flex-direction: column;
+  }
+
+  .banner Col:first-child,
+  .banner Col:last-child {
+    flex: 0 0 100%;
+    padding-right: 0;
+  }
+
+  .banner h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .banner p {
+    text-align: center;
+  }
+
+  .banner img {
+    margin-top: 30px;
+    max-height: 400px;
+  }
+}
+
+.txt-rotate > .wrap {
+  border-right: 0.08em solid #878585;
+  animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: #878585; }
+}
+
+
+/* Enhanced Background with Space Theme */
 .background {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(45deg, #1a1a1a, #333333, #1a1a1a);
-  background-size: 400% 400%;  /* Slightly larger gradient area for smoother transitions */
-  animation: gradientAnimation 12s ease-in-out infinite;  /* Slower animation for smoother effect */
+  background: linear-gradient(
+    225deg, 
+    #000000, 
+    #0a0327,
+    #1a0454,
+    #2d0086,
+    #1a0454,
+    #0a0327,
+    #000000
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  z-index: -2;
+}
+
+/* Gradient Animation */
+@keyframes gradientShift {
+  0% { background-position: 0% 50% }
+  50% { background-position: 100% 50% }
+  100% { background-position: 0% 50% }
+}
+
+/* Starfield Effect */
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
   z-index: -1;
 }
 
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  25% {
-    background-position: 50% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  75% {
-    background-position: 50% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle var(--duration) ease-in-out infinite;
+  opacity: 0;
 }
 
-.name-description {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+/* Shooting Stars */
+.shooting-star {
+  position: absolute;
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%);
+  animation: shoot 3s linear infinite;
+  transform: rotate(-45deg);
 }
 
-.profile-image-container {
-  margin-bottom: 20px;
-  position: relative;
-  width: 250px;
-  height: 250px;
-}
-
-.profile-image {
+/* Aurora Effect */
+.aurora {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 4px solid white;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  will-change: transform;
+  background: linear-gradient(
+    0deg,
+    transparent 0%,
+    rgba(77, 5, 232, 0.05) 45%,
+    rgba(42, 4, 130, 0.1) 65%,
+    transparent 100%
+  );
+  filter: blur(40px);
+  animation: auroraFlow 8s ease infinite;
+  z-index: -1;
+  opacity: 0.5;
 }
 
-.profile-image-container:hover .profile-image {
-  transform: scale(1.1);
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+@keyframes twinkle {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
 }
 
-@media (max-width: 768px) {
-  .profile-image-container {
-    width: 200px;
-    height: 200px;
-    contain: layout;
+@keyframes shoot {
+  0% {
+    transform: translateX(-100%) translateY(0) rotate(-45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(200%) translateY(-200%) rotate(-45deg);
+    opacity: 0;
   }
 }
 
+@keyframes auroraFlow {
+  0%, 100% {
+    transform: translateX(-50%) translateY(-10%);
+  }
+  50% {
+    transform: translateX(50%) translateY(10%);
+  }
+}
 /* Sections */
 .section {
   min-height: 100vh;
@@ -136,7 +288,7 @@ body {
 
 /* About Me Section */
 .about-section {
-  text-align: center;
+  padding: 80px 20px;
   color: #fff;
   position: relative;
   max-width: 1400px;
@@ -147,6 +299,23 @@ body {
   backdrop-filter: blur(10px);
   z-index: 1;
   margin-bottom: 60px;
+  margin-top: -80px;  
+}
+
+.about-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #f8f7f7;
+  text-align: center;
+}
+
+.about-section p {
+  max-width: 700px;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #b6b4b4;
+  text-align: center; /* Fix typo here */
+  margin: 40px auto; /* Center the text block */
 }
 
 /* Navigation */
@@ -545,7 +714,7 @@ body {
   position: absolute;
   width: 4px;
   height: 100%;
-  background-color: #1abc9c; /* Change to a modern teal color for contrast */
+  background-color: #4661E6;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -587,7 +756,7 @@ body {
   position: absolute;
   width: 50px;
   height: 50px;
-  background-color: #1abc9c; /* Matching the timeline color */
+  background-color: #4661E6; /* Matching the timeline color */
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -608,7 +777,7 @@ body {
 }
 
 .Experience-info h3 {
-  color: #1abc9c; /* Use the timeline color for headings */
+  color: #4661E6; /* Use the timeline color for headings */
   margin-bottom: 5px;
 }
 
