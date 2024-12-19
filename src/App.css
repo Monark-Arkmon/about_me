@@ -130,18 +130,22 @@ body {
   }
 }
 
+/* Blinking cursor style */
 .txt-rotate > .wrap {
   border-right: 0.08em solid #fff;
   animation: blink-caret 0.75s step-end infinite;
 }
 
 @keyframes blink-caret {
-  from, to { border-color: transparent; }
-  50% { border-color: #504f4f; }
+  0%, 100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #fff;
+  }
 }
 
 
-/* Enhanced Background with Space Theme */
 .background {
   position: fixed;
   top: 0;
