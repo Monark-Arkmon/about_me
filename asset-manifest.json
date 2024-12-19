@@ -1,18 +1,19 @@
 {
   "files": {
-    "main.css": "/about_me/static/css/main.eb265f66.css",
-    "main.js": "/about_me/static/js/main.739368a0.js",
+    "main.css": "/about_me/static/css/main.c7a54785.css",
+    "main.js": "/about_me/static/js/main.b9feb586.js",
     "static/js/488.c5c89586.chunk.js": "/about_me/static/js/488.c5c89586.chunk.js",
     "static/media/CV_Arkapratim_Mondal.pdf": "/about_me/static/media/CV_Arkapratim_Mondal.6eac0403c52fe1062636.pdf",
-    "static/media/profile.jpg": "/about_me/static/media/profile.8abe745a71079f32842f.jpg",
+    "static/media/banner-bg.png": "/about_me/static/media/banner-bg.cc1273af450504afe755.png",
+    "static/media/header-img.svg": "/about_me/static/media/header-img.84bf93eb20488a753440bf83d27db7bb.svg",
     "static/media/project.jpg": "/about_me/static/media/project.42a1ad28b19ee25295b6.jpg",
     "index.html": "/about_me/index.html",
-    "main.eb265f66.css.map": "/about_me/static/css/main.eb265f66.css.map",
-    "main.739368a0.js.map": "/about_me/static/js/main.739368a0.js.map",
+    "main.c7a54785.css.map": "/about_me/static/css/main.c7a54785.css.map",
+    "main.b9feb586.js.map": "/about_me/static/js/main.b9feb586.js.map",
     "488.c5c89586.chunk.js.map": "/about_me/static/js/488.c5c89586.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.eb265f66.css",
-    "static/js/main.739368a0.js"
+    "static/css/main.c7a54785.css",
+    "static/js/main.b9feb586.js"
   ]
 }
