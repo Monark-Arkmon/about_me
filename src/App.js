@@ -1,7 +1,14 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import './App.css';
-import project1Image from './project.jpg';
+import project1Image from './face.png';
+import project2Image from './finance.png';
+import project3Image from './portfolio.png';
+import project4Image from './keep.png';
+import project5Image from './weather.png';
+import project6Image from './game.png';
+import project7Image from './verilog.png';
+import project8Image from './hotel.png';
 import CV from './CV_Arkapratim_Mondal.pdf';
 import { Banner } from './Banner';
 
@@ -117,59 +124,59 @@ function Portfolio() {
   const projects = [
     {
       id: 1,
-      name: 'Project 1',
+      name: 'Facial Recognition Attendance System using KNN and Cascade Classifier',
       image: project1Image,
-      description: 'This is a description of Project 1.',
-      githubLink: 'https://github.com/yourusername/project1'
+      description: 'An automated attendance system using facial recognition for authentication. Made using React.js, Lucide-React for Frontend and cv2, numpy, skicit-learn, fastapi and corsmiddleware, uvicorn for backend.',
+      githubLink: 'https://github.com/Monark-Arkmon/Face_Recog_Attendance_Frontend'
     },
     {
       id: 2,
-      name: 'Project 2',
-      image: project1Image,
-      description: 'This is a description of Project 2.',
-      githubLink: 'https://github.com/yourusername/project2'
+      name: 'Full-Stack Finance Tracker App',
+      image: project2Image,
+      description: 'A finance tracker app to monitor income, expenses, and savings trends. Made using React.js, Ant Design(UI and Visualization) for Frontend, Papaparse for file parsing and Firebase for Backend.',
+      githubLink: 'https://github.com/Monark-Arkmon/FinTrack'
     },
     {
       id: 3,
-      name: 'Project 3',
-      image: project1Image,
-      description: 'This is a description of Project 3.',
-      githubLink: 'https://github.com/yourusername/project3'
+      name: 'Portfolio Website',
+      image: project3Image,
+      description: 'A personal portfolio website showcasing my skills, projects, and achievements. Made using React.js, Framer Motion, React Bootstap, HTML, and CSS.',
+      githubLink: 'https://github.com/Monark-Arkmon/about_me'
     },
     {
       id: 4,
-      name: 'Project 1',
-      image: project1Image,
-      description: 'This is a description of Project 1.',
-      githubLink: 'https://github.com/yourusername/project4'
+      name: 'Google Keep Clone',
+      image: project4Image,
+      description: 'A clone of Google Keep for note-taking and organizing tasks. Made using React.js, MUI Library(Material and Styles), uuid, react-beautiful-dnd and react-router.',
+      githubLink: 'https://github.com/Monark-Arkmon/keep_clone'
     },
     {
       id: 5,
-      name: 'Project 2',
-      image: project1Image,
-      description: 'This is a description of Project 2.',
-      githubLink: 'https://github.com/yourusername/project5'
+      name: 'Weather App',
+      image: project5Image,
+      description: 'A weather forecasting app providing real-time weather updates for locations worldwide along with a working serach bar. Made using React.js, AsyncPaginate, accessible-accordion, OpenWeatherMap API and GeoDB API.',
+      githubLink: 'https://github.com/Monark-Arkmon/weather'
     },
     {
       id: 6,
-      name: 'Project 3',
-      image: project1Image,
-      description: 'This is a description of Project 3.',
-      githubLink: 'https://github.com/yourusername/project6'
+      name: 'Coffee Addict Game',
+      image: project6Image,
+      description: 'A Python game where players catch falling coffee beans to earn points, with powerups and challenges. Made using Python and Tkinter.',
+      githubLink: 'https://github.com/Monark-Arkmon/Coffee_Addict'
     },
     {
       id: 7,
-      name: 'Project 1',
-      image: project1Image,
-      description: 'This is a description of Project 1.',
-      githubLink: 'https://github.com/yourusername/project1'
+      name: 'Verilog Countdown Timer',
+      image: project7Image,
+      description: 'The Verilog Timer Countdown project is a hardware-based countdown timer implemented using a Verilog microprocessor, with both the hardware design and system programming accomplished using RISC-V assembly.',
+      githubLink: 'https://github.com/Monark-Arkmon/Verilog_Timer'
     },
     {
       id: 8,
-      name: 'Project 2',
-      image: project1Image,
-      description: 'This is a description of Project 2.',
-      githubLink: 'https://github.com/yourusername/project2'
+      name: 'Hotel Management System',
+      image: project8Image,
+      description: 'The Hotel Management System is a web application for managing bookings, room availability, and payments. It streamlines hotel operations and improves user experience for both staff and guests. Made using Python and MySQL.',
+      githubLink: 'https://github.com/Monark-Arkmon/Hotel-Management-System'
     }
   ];
 
@@ -326,14 +333,16 @@ function Portfolio() {
           About Me
         </h2>
         <p>
-        Hello! I am Arkapratim Mondal, a first-year Computer Science student at the University of Manchester, driven by a passion for technology, problem-solving, and innovation. My interest in coding sparked during my high school years when I created automation scripts for games. This led me to pursue a career in software development, where I continuously challenge myself to learn and grow.
+            Hello! I am Arkapratim Mondal, a first-year Computer Science student at the University of Manchester, driven by a passion for technology, problem-solving, and innovation. My interest in coding sparked during my high school years when I created automation scripts for games. This curiosity eventually grew into a strong desire to pursue a career in software development, where I continuously challenge myself to learn and grow.
         </p>
         <p>
-        I have experience in web development, including building projects using modern technologies like React.js, Python, and Django. I am also passionate about UI/UX design and always strive to create user-friendly and intuitive interfaces.
+            I have hands-on experience in web development, having built projects using modern technologies like React.js, Python, and Django. I enjoy crafting user-friendly and intuitive interfaces that not only look great but also enhance the overall user experience.
         </p>
         <p>
-        When I’m not coding, you can find me exploring new tech trends or working on personal projects.
+            Beyond coding, I enjoy collaborating with others to develop innovative solutions and contribute to meaningful projects. I have a strong foundation in MySQL and APIs, which I have applied in projects that involve managing data and creating seamless integrations.
+            As a developer, I believe in continuous learning and improvement. Whether it’s mastering new frameworks, solving challenging bugs, or iterating on designs, I thrive on turning concepts into reality.
         </p>
+
         
         </section>
       
@@ -427,20 +436,15 @@ function Portfolio() {
         <p>A showcase of my technical and interpersonal skills.</p>
         <div className="skills-container">
           {[
-            { name: 'JavaScript', icon: '🟨' },
-            { name: 'Python', icon: '🐍' },
-            { name: 'React.js', icon: '⚛️' },
-            { name: 'HTML & CSS', icon: '🌐' },
-            { name: 'MySQL', icon: '🐬' },
-            { name: 'Verilog', icon: '📡' },
-            { name: 'RISC-V', icon: '💡' },
-            { name: 'Unity', icon: '🎮' },
-            { name: 'Django', icon: '🐍' },
-            { name: 'API Integration', icon: '🔌' },
-            {name: 'PHP', icon: '🔥'},
-            { name: 'Git & GitHub', icon: '🔧' },
-            { name: 'Team Collaboration', icon: '🤝' },
-            { name: 'Problem Solving', icon: '🧠' }
+            { name: 'JavaScript', icon: '🟨', level: 90, color: '#F7DF1E' },
+            { name: 'Python', icon: '🐍', level: 85, color: '#3776AB' },
+            { name: 'React.js', icon: '⚛️', level: 88, color: '#61DAFB' },
+            { name: 'HTML & CSS', icon: '🌐', level: 92, color: '#E34F26' },
+            { name: 'MySQL', icon: '🐬', level: 80, color: '#4479A1' },
+            { name: 'Verilog', icon: '📡', level: 75, color: '#FF6B6B' },
+            { name: 'RISC-V', icon: '💡', level: 70, color: '#4CAF50' },
+            { name: 'API Integration', icon: '🔌', level: 85, color: '#9B59B6' },
+            { name: 'Git & GitHub', icon: '🔧', level: 88, color: '#333333' }
           ].map((skill, index) => (
             <motion.div
               key={skill.name}
@@ -450,8 +454,20 @@ function Portfolio() {
               transition={{ duration: 0.2, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <div className="skill-icon">{skill.icon}</div>
-              <h4>{skill.name}</h4>
+              <div className="skill-content">
+                <div className="skill-icon">{skill.icon}</div>
+                <h4>{skill.name}</h4>
+                <div className="skill-bar-container">
+                  <motion.div
+                    className="skill-bar"
+                    initial={{ width: 0 }}
+                    animate={{ width: `${skill.level}%` }}
+                    transition={{ duration: 1, delay: index * 0.1 }}
+                    style={{ backgroundColor: skill.color }}
+                  />
+                </div>
+                <div className="skill-percentage">{skill.level}%</div>
+              </div>
             </motion.div>
           ))}
         </div>
