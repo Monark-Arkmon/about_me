@@ -3,7 +3,8 @@
 A modern, responsive portfolio website built with React.js and featuring animated UI components. The site includes sections for projects, skills, experience timeline, and contact information.
 
 ## Deployed Version
-The application is live and accessible at: https://monark-arkmon.github.io/weather/
+The application is live and accessible at: 
+[https://monark-arkmon.github.io/about-me/](https://monark-arkmon.github.io/about-me/)
 
 ## Features
 
@@ -41,16 +42,11 @@ git clone https://github.com/Monark-Arkmon/about_me
 
 2. Install dependencies:
 ```bash
-cd portfolio-website
+cd about_me
 npm install
 ```
 
-3. Update personal information:
-- Edit `src/App.js` for project data
-- Replace images in `src/assets`
-- Update content in `Banner.js`
-
-4. Start development server:
+3. Start development server:
 ```bash
 npm start
 ```
