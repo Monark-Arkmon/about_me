@@ -407,7 +407,7 @@ function Portfolio() {
             { name: 'React.js', icon: <FaReact />, percentage: 88, color: '#61DAFB' },
             { name: 'HTML & CSS', icon: <FaHtml5 />, percentage: 92, color: '#E34F26' },
             { name: 'MySQL', icon: <FaDatabase />, percentage: 80, color: '#4479A1' },
-            { name: 'Verilog & RISC-V', icon: <FaMicrochip />, percentage: 75, color: '#FF6B6B' },
+            { name: 'Verilog, RISC-V', icon: <FaMicrochip />, percentage: 75, color: '#FF6B6B' },
             { name: 'C++', icon: <FaCode />, percentage: 20, color: '#4CAF50' },
             { name: 'API Integration', icon: <FaPlug />, percentage: 85, color: '#9B59B6' },
           ].map((skill, index) => (
