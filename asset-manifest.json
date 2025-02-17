@@ -1,26 +1,27 @@
 {
   "files": {
-    "main.css": "/about_me/static/css/main.f7d1261b.css",
-    "main.js": "/about_me/static/js/main.d68df774.js",
+    "main.css": "/about_me/static/css/main.4f7af476.css",
+    "main.js": "/about_me/static/js/main.8272895d.js",
     "static/js/488.c5c89586.chunk.js": "/about_me/static/js/488.c5c89586.chunk.js",
     "static/media/game.png": "/about_me/static/media/game.26d617b4c8de2779b223.png",
     "static/media/portfolio.png": "/about_me/static/media/portfolio.041b8400bd6219ae76b6.png",
+    "static/media/mountains.png": "/about_me/static/media/mountains.6bceb498a0e1e0a70b47.png",
     "static/media/verilog.png": "/about_me/static/media/verilog.aae6c239edd61d9b917b.png",
     "static/media/face.png": "/about_me/static/media/face.c2ec16f51087e98dd3a2.png",
     "static/media/weather.png": "/about_me/static/media/weather.4426d87b1eeaf30aeec6.png",
     "static/media/hotel.png": "/about_me/static/media/hotel.1b16c5dcdf942900d63f.png",
     "static/media/CV_Arkapratim_Mondal.pdf": "/about_me/static/media/CV_Arkapratim_Mondal.c60ac531218a5f711c50.pdf",
-    "static/media/banner-bg.png": "/about_me/static/media/banner-bg.cc1273af450504afe755.png",
-    "static/media/header-img.svg": "/about_me/static/media/header-img.84bf93eb20488a753440bf83d27db7bb.svg",
     "static/media/finance.png": "/about_me/static/media/finance.53264d35c0eb13a5c56b.png",
+    "static/media/planets.png": "/about_me/static/media/planets.827213af57ae82d007cd.png",
+    "static/media/sun.png": "/about_me/static/media/sun.1122608e12712a52470d.png",
     "static/media/keep.png": "/about_me/static/media/keep.4bf93b666dc8893a9ff7.png",
     "index.html": "/about_me/index.html",
-    "main.f7d1261b.css.map": "/about_me/static/css/main.f7d1261b.css.map",
-    "main.d68df774.js.map": "/about_me/static/js/main.d68df774.js.map",
+    "main.4f7af476.css.map": "/about_me/static/css/main.4f7af476.css.map",
+    "main.8272895d.js.map": "/about_me/static/js/main.8272895d.js.map",
     "488.c5c89586.chunk.js.map": "/about_me/static/js/488.c5c89586.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f7d1261b.css",
-    "static/js/main.d68df774.js"
+    "static/css/main.4f7af476.css",
+    "static/js/main.8272895d.js"
   ]
 }
