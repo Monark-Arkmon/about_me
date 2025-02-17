@@ -11,6 +11,9 @@ import project7Image from './verilog.png';
 import project8Image from './hotel.png';
 import CV from './CV_Arkapratim_Mondal.pdf';
 import { Banner } from './Banner';
+import ContactButton from './ContactButton';
+import { FaDesktop, FaMobileAlt, FaLightbulb, FaTrophy, FaWrench, FaSatellite, FaCalendarAlt } from 'react-icons/fa';
+import { FaCode, FaJsSquare, FaPython, FaReact, FaHtml5, FaDatabase, FaMicrochip, FaPlug } from 'react-icons/fa';
 
 function Portfolio() {
   const [isContactOpen, setIsContactOpen] = useState(false);
@@ -18,7 +21,6 @@ function Portfolio() {
   const [isPageLoaded, setIsPageLoaded] = useState(false);
   
   const homeRef = useRef(null);
-  const aboutRef = useRef(null);
   const ExperienceRef = useRef(null);
   const projectsRef = useRef(null);
   const skillsRef = useRef(null);
@@ -28,7 +30,6 @@ function Portfolio() {
 
     const sections = [
       { id: 'home', ref: homeRef },
-      { id: 'about', ref: aboutRef },
       { id: 'experience', ref: ExperienceRef },
       { id: 'projects', ref: projectsRef },
       { id: 'skills', ref: skillsRef },
@@ -186,49 +187,49 @@ function Portfolio() {
       year: '2020 - 2021',
       title: 'Database Administrator & Systems Lead',
       description: 'Managed and maintained databases, and led system administration at Brahma Kumaris.',
-      icon: '🖥️'
+      icon: <FaDesktop />
     },
     {
       id: 2,
       year: '2020 - 2022',
       title: 'Social Media Assistant',
       description: 'Managed social media accounts, enhancing online engagement and communication for Brahma Kumaris.',
-      icon: '📱'
+      icon: <FaMobileAlt />
     },
     {
       id: 3,
       year: '2022 - 2023',
       title: 'Volunteer, Amitasha Program',
       description: 'Contributed to the social service program teaching underprivileged girls, promoting education and empowerment.',
-      icon: '💡'
+      icon: <FaLightbulb />
     },
     {
       id: 4,
       year: '2023',
       title: '3rd Place Prize, Vidyarthi Vigyan Manthan, India',
-      description: 'Awarded 3rd place in the state-level science competition for innovative project work.',
-      icon: '🥉'
+      description: 'Awarded 3rd place in the state-percentage science competition for innovative project work.',
+      icon: <FaTrophy />
     },
     {
       id: 5,
       year: '2023 - 2024',
       title: 'Committee Member, Tech Syndicate Club, Amity International School',
       description: 'Contributed to the activities of the largest tech club at school, organizing events and workshops.',
-      icon: '🔧'
+      icon: <FaWrench />
     },
     {
       id: 6,
       year: 'Sep 2024 - Present',
       title: 'Programming Lead, Manchester CanSat Project',
       description: 'Leading the programming team for the CanSat project, overseeing system design and implementation.',
-      icon: '🛰️'
+      icon: <FaSatellite />
     },
     {
       id: 7,
       year: 'Sep 2024 - Present',
       title: 'Lead Events Officer, Google Developers Group, UoM',
       description: 'Organizing events and activities for the Google Developers Group at the University of Manchester.',
-      icon: '📅'
+      icon: <FaCalendarAlt />
     }
   ];
 
@@ -239,12 +240,6 @@ function Portfolio() {
         className={`nav-link ${activeSection === 'home' ? 'active' : ''}`}
       >
         Home
-      </button>
-      <button 
-        onClick={() => scrollToSection(aboutRef)} 
-        className={`nav-link ${activeSection === 'about' ? 'active' : ''}`}
-      >
-        About
       </button>
       <button 
         onClick={() => scrollToSection(ExperienceRef)} 
@@ -308,44 +303,15 @@ function Portfolio() {
   return (
     <div className="portfolio-container">
       {renderNavigation()}
-      <div className="contact">
-        {renderContactDropdown()}
-      </div>
+      <ContactButton />
 
       {/* Home Page */}
       <div ref={homeRef} className="landing-page">
         <div className="background"></div>
         <div className="name-description">
-        < Banner />
-          {isPageLoaded && (
-            <>
-            </>
-          )}
+          <Banner />
         </div>
       </div>
-
-      {/* About Section */}
-      <section 
-        ref={aboutRef}
-        className="about-section"
-      >
-        <h2>
-          About Me
-        </h2>
-        <p>
-            Hello! I am Arkapratim Mondal, a first-year Computer Science student at the University of Manchester, driven by a passion for technology, problem-solving, and innovation. My interest in coding sparked during my high school years when I created automation scripts for games. This curiosity eventually grew into a strong desire to pursue a career in software development, where I continuously challenge myself to learn and grow.
-        </p>
-        <p>
-            I have hands-on experience in web development, having built projects using modern technologies like React.js, Python, and Django. I enjoy crafting user-friendly and intuitive interfaces that not only look great but also enhance the overall user experience.
-        </p>
-        <p>
-            Beyond coding, I enjoy collaborating with others to develop innovative solutions and contribute to meaningful projects. I have a strong foundation in MySQL and APIs, which I have applied in projects that involve managing data and creating seamless integrations.
-            As a developer, I believe in continuous learning and improvement. Whether it’s mastering new frameworks, solving challenging bugs, or iterating on designs, I thrive on turning concepts into reality.
-        </p>
-
-        
-        </section>
-      
 
       {/* Experience Section */}
       <motion.section 
@@ -436,15 +402,14 @@ function Portfolio() {
         <p>A showcase of my technical and interpersonal skills.</p>
         <div className="skills-container">
           {[
-            { name: 'JavaScript', icon: '🟨', level: 90, color: '#F7DF1E' },
-            { name: 'Python', icon: '🐍', level: 85, color: '#3776AB' },
-            { name: 'React.js', icon: '⚛️', level: 88, color: '#61DAFB' },
-            { name: 'HTML & CSS', icon: '🌐', level: 92, color: '#E34F26' },
-            { name: 'MySQL', icon: '🐬', level: 80, color: '#4479A1' },
-            { name: 'Verilog', icon: '📡', level: 75, color: '#FF6B6B' },
-            { name: 'RISC-V', icon: '💡', level: 70, color: '#4CAF50' },
-            { name: 'API Integration', icon: '🔌', level: 85, color: '#9B59B6' },
-            { name: 'Git & GitHub', icon: '🔧', level: 88, color: '#333333' }
+            { name: 'JavaScript', icon: <FaJsSquare />, percentage: 90, color: '#F7DF1E' },
+            { name: 'Python', icon: <FaPython />, percentage: 85, color: '#3776AB' },
+            { name: 'React.js', icon: <FaReact />, percentage: 88, color: '#61DAFB' },
+            { name: 'HTML & CSS', icon: <FaHtml5 />, percentage: 92, color: '#E34F26' },
+            { name: 'MySQL', icon: <FaDatabase />, percentage: 80, color: '#4479A1' },
+            { name: 'Verilog & RISC-V', icon: <FaMicrochip />, percentage: 75, color: '#FF6B6B' },
+            { name: 'C++', icon: <FaCode />, percentage: 20, color: '#4CAF50' },
+            { name: 'API Integration', icon: <FaPlug />, percentage: 85, color: '#9B59B6' },
           ].map((skill, index) => (
             <motion.div
               key={skill.name}
@@ -461,12 +426,12 @@ function Portfolio() {
                   <motion.div
                     className="skill-bar"
                     initial={{ width: 0 }}
-                    animate={{ width: `${skill.level}%` }}
+                    animate={{ width: `${skill.percentage}%` }}
                     transition={{ duration: 1, delay: index * 0.1 }}
                     style={{ backgroundColor: skill.color }}
                   />
                 </div>
-                <div className="skill-percentage">{skill.level}%</div>
+                <div className="skill-percentage">{skill.percentage}%</div>
               </div>
             </motion.div>
           ))}
