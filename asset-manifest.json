@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/about_me/static/css/main.4f7af476.css",
-    "main.js": "/about_me/static/js/main.871f6615.js",
+    "main.css": "/about_me/static/css/main.af2b196a.css",
+    "main.js": "/about_me/static/js/main.453342c5.js",
     "static/js/488.c5c89586.chunk.js": "/about_me/static/js/488.c5c89586.chunk.js",
+    "static/media/8k_earth_clouds.jpg": "/about_me/static/media/8k_earth_clouds.08fcd80007fae8fc7170.jpg",
+    "static/media/8k_earth_daymap.jpg": "/about_me/static/media/8k_earth_daymap.54672c1f3ba121d80470.jpg",
+    "static/media/8k_earth_nightmap.jpg": "/about_me/static/media/8k_earth_nightmap.c0e138e9bf380cafd2c2.jpg",
+    "static/media/planchester.png": "/about_me/static/media/planchester.c1b9aee06ae8010b0ebb.png",
     "static/media/game.png": "/about_me/static/media/game.26d617b4c8de2779b223.png",
-    "static/media/portfolio.png": "/about_me/static/media/portfolio.041b8400bd6219ae76b6.png",
-    "static/media/mountains.png": "/about_me/static/media/mountains.6bceb498a0e1e0a70b47.png",
-    "static/media/verilog.png": "/about_me/static/media/verilog.aae6c239edd61d9b917b.png",
+    "static/media/8k_earth_specular_map.jpg": "/about_me/static/media/8k_earth_specular_map.7b4efa59933b470e3776.jpg",
+    "static/media/8k_earth_normal_map.jpg": "/about_me/static/media/8k_earth_normal_map.930cf2e99bc548140c29.jpg",
     "static/media/face.png": "/about_me/static/media/face.c2ec16f51087e98dd3a2.png",
-    "static/media/weather.png": "/about_me/static/media/weather.4426d87b1eeaf30aeec6.png",
-    "static/media/hotel.png": "/about_me/static/media/hotel.1b16c5dcdf942900d63f.png",
+    "static/media/cricket.png": "/about_me/static/media/cricket.c609b316918a23511a94.png",
     "static/media/CV_Arkapratim_Mondal.pdf": "/about_me/static/media/CV_Arkapratim_Mondal.c60ac531218a5f711c50.pdf",
     "static/media/finance.png": "/about_me/static/media/finance.53264d35c0eb13a5c56b.png",
-    "static/media/planets.png": "/about_me/static/media/planets.827213af57ae82d007cd.png",
-    "static/media/sun.png": "/about_me/static/media/sun.1122608e12712a52470d.png",
     "static/media/keep.png": "/about_me/static/media/keep.4bf93b666dc8893a9ff7.png",
     "index.html": "/about_me/index.html",
-    "main.4f7af476.css.map": "/about_me/static/css/main.4f7af476.css.map",
-    "main.871f6615.js.map": "/about_me/static/js/main.871f6615.js.map",
+    "main.af2b196a.css.map": "/about_me/static/css/main.af2b196a.css.map",
+    "main.453342c5.js.map": "/about_me/static/js/main.453342c5.js.map",
     "488.c5c89586.chunk.js.map": "/about_me/static/js/488.c5c89586.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4f7af476.css",
-    "static/js/main.871f6615.js"
+    "static/css/main.af2b196a.css",
+    "static/js/main.453342c5.js"
   ]
 }
