@@ -1,22 +1,20 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import './App.css';
-import project1Image from './face.png';
-import project2Image from './finance.png';
-import project3Image from './portfolio.png';
-import project4Image from './keep.png';
-import project5Image from './weather.png';
-import project6Image from './game.png';
-import project7Image from './verilog.png';
-import project8Image from './hotel.png';
+import project1Image from './project-imgs/face.png';
+import project2Image from './project-imgs/cricket.png';
+import project3Image from './project-imgs/finance.png';
+import project4Image from './project-imgs/planchester.png';
+import project5Image from './project-imgs/keep.png';
+import project6Image from './project-imgs/game.png';
 import CV from './CV_Arkapratim_Mondal.pdf';
-import { Banner } from './Banner';
+import Intro from './Intro';
+import AboutSection from './AboutSection';
 import ContactButton from './ContactButton';
 import { FaDesktop, FaMobileAlt, FaLightbulb, FaTrophy, FaWrench, FaSatellite, FaCalendarAlt } from 'react-icons/fa';
 import { FaCode, FaJsSquare, FaPython, FaReact, FaHtml5, FaDatabase, FaMicrochip, FaPlug } from 'react-icons/fa';
 
 function Portfolio() {
-  const [isContactOpen, setIsContactOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [isPageLoaded, setIsPageLoaded] = useState(false);
   
@@ -125,38 +123,38 @@ function Portfolio() {
   const projects = [
     {
       id: 1,
-      name: 'Facial Recognition Attendance System using KNN and Cascade Classifier',
+      name: 'Facial Recognition Attendance System',
       image: project1Image,
-      description: 'An automated attendance system using facial recognition for authentication. Made using React.js, Lucide-React for Frontend and cv2, numpy, skicit-learn, fastapi and corsmiddleware, uvicorn for backend.',
+      description: 'Developed a face recognition system using FastAPI, OpenCV, and KNN for real-time identification and attendance tracking. Implemented face detection, feature extraction, and data management with pickle for efficient storage. Achieved high recognition accuracy with a confidence-based classification approach.',
       githubLink: 'https://github.com/Monark-Arkmon/Face_Recog_Attendance_Frontend'
     },
     {
       id: 2,
-      name: 'Full-Stack Finance Tracker App',
+      name: 'Cricket Prediction App',
       image: project2Image,
+      description: 'Developed an IPL match winner prediction model using machine learning with advanced feature engineering (team performance, player form, weather). Trained and optimized multiple models (Random Forest, XGBoost, Gradient Boosting, SVM, CatBoost, LightGBM, Logistic Regression) using ensemble techniques. Achieved 70.32% accuracy with an ensemble model, evaluated using GridSearchCV and feature importance analysis.',
+      githubLink: 'https://github.com/Monark-Arkmon/IPL_prediction'
+    },
+    {
+      id: 3,
+      name: 'Full-Stack Finance Tracker App',
+      image: project3Image,
       description: 'A finance tracker app to monitor income, expenses, and savings trends. Made using React.js, Ant Design(UI and Visualization) for Frontend, Papaparse for file parsing and Firebase for Backend.',
       githubLink: 'https://github.com/Monark-Arkmon/FinTrack'
     },
     {
-      id: 3,
-      name: 'Portfolio Website',
-      image: project3Image,
-      description: 'A personal portfolio website showcasing my skills, projects, and achievements. Made using React.js, Framer Motion, React Bootstap, HTML, and CSS.',
-      githubLink: 'https://github.com/Monark-Arkmon/about_me'
-    },
-    {
       id: 4,
-      name: 'Google Keep Clone',
+      name: 'Planchester',
       image: project4Image,
-      description: 'A clone of Google Keep for note-taking and organizing tasks. Made using React.js, MUI Library(Material and Styles), uuid, react-beautiful-dnd and react-router.',
-      githubLink: 'https://github.com/Monark-Arkmon/keep_clone'
+      description: 'Planchester is a React-based web application for planning trips in Manchester, featuring user authentication, profile management, and itinerary generation. Integrated Firebase for authentication and Firestore for data storage. Implemented responsive UI and utilized TripAdvisor API, Google Maps API, and geolocation for dynamic itinerary suggestions and location-based services.',
+      githubLink: 'https://github.com/Monark-Arkmon/Hotel-Management-System'
     },
     {
       id: 5,
-      name: 'Weather App',
+      name: 'Google Keep Clone',
       image: project5Image,
-      description: 'A weather forecasting app providing real-time weather updates for locations worldwide along with a working serach bar. Made using React.js, AsyncPaginate, accessible-accordion, OpenWeatherMap API and GeoDB API.',
-      githubLink: 'https://github.com/Monark-Arkmon/weather'
+      description: 'A clone of Google Keep for note-taking and organizing tasks. Made using React.js, MUI Library(Material and Styles), uuid, react-beautiful-dnd and react-router.',
+      githubLink: 'https://github.com/Monark-Arkmon/keep_clone'
     },
     {
       id: 6,
@@ -164,20 +162,6 @@ function Portfolio() {
       image: project6Image,
       description: 'A Python game where players catch falling coffee beans to earn points, with powerups and challenges. Made using Python and Tkinter.',
       githubLink: 'https://github.com/Monark-Arkmon/Coffee_Addict'
-    },
-    {
-      id: 7,
-      name: 'Verilog Countdown Timer',
-      image: project7Image,
-      description: 'The Verilog Timer Countdown project is a hardware-based countdown timer implemented using a Verilog microprocessor, with both the hardware design and system programming accomplished using RISC-V assembly.',
-      githubLink: 'https://github.com/Monark-Arkmon/Verilog_Timer'
-    },
-    {
-      id: 8,
-      name: 'Hotel Management System',
-      image: project8Image,
-      description: 'The Hotel Management System is a web application for managing bookings, room availability, and payments. It streamlines hotel operations and improves user experience for both staff and guests. Made using Python and MySQL.',
-      githubLink: 'https://github.com/Monark-Arkmon/Hotel-Management-System'
     }
   ];
 
@@ -268,37 +252,6 @@ function Portfolio() {
       </a>
     </nav>
   );
-  
-  const renderContactDropdown = () => (
-    <div 
-      className="contact-dropdown-container"
-      onMouseEnter={() => setIsContactOpen(true)}
-      onMouseLeave={() => setIsContactOpen(false)}
-    >
-      <button className="contact-button">
-        Contact Me
-      </button>
-      
-      {isContactOpen && (
-        <div className="contact-dropdown">
-          <a 
-            href="mailto:arkapratimmondal@gmail.com" 
-            className="contact-dropdown-item"
-          >
-            Mail me
-          </a>
-          <a 
-            href="https://www.linkedin.com/in/arkapratim-mondal" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="contact-dropdown-item"
-          >
-            LinkedIn
-          </a>
-        </div>
-      )}
-    </div>
-  );
 
   return (
     <div className="portfolio-container">
@@ -308,9 +261,27 @@ function Portfolio() {
       {/* Home Page */}
       <div ref={homeRef} className="landing-page">
         <div className="background"></div>
-        <div className="name-description">
-          <Banner />
-        </div>
+        <motion.div 
+          className="home-content"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            gap: '50px',
+            padding: '0 40px',
+            height: '100vh'
+          }}
+        >
+          <div style={{ flex: 1 }}>
+            <AboutSection />
+          </div>
+          <div style={{ flex: 1 }}>
+            <Intro />
+          </div>
+        </motion.div>
       </div>
 
       {/* Experience Section */}
