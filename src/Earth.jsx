@@ -8,6 +8,7 @@ import EarthNormalMap from "./textures/8k_earth_normal_map.jpg";
 import EarthSpecularMap from "./textures/8k_earth_specular_map.jpg";
 import EarthCloudsMap from "./textures/8k_earth_clouds.jpg";
 import { TextureLoader } from "three";
+import { color } from "framer-motion";
 
 export function Earth(props) {
   const [colorMap, nightMap, normalMap, specularMap, cloudsMap] = useLoader(
@@ -91,8 +92,8 @@ export function Earth(props) {
         <sphereGeometry args={[1, 32, 32]} />
         <shaderMaterial 
           uniforms={{
-            dayTexture: { value: colorMap },
-            nightTexture: { value: nightMap },
+            dayTexture: { value: nightMap },
+            nightTexture: { value: colorMap },
             normalMap: { value: normalMap },
             specularMap: { value: specularMap },
             lightIntensity: { value: 1 } // Increased light intensity
